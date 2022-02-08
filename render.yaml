@@ -39,7 +39,6 @@ services:
   - type: web
     name: api
     env: docker
-    healthCheckPath: /
     dockerfilePath: ./Dockerfile.api
     envVars:
       - key: MONGODB_URI
