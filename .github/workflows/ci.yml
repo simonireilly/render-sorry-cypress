@@ -18,5 +18,8 @@ jobs:
           node-version: "14"
           cache: "yarn"
 
+      - name: install
+        run: yarn
+
       - name: Run
         run: yarn cy:para
