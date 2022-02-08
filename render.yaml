@@ -17,7 +17,7 @@ services:
       - key: MONGODB_DATABASE
         value: sorry-cypress
       - key: MONGODB_URI
-        value: mongodb://sorry-cypress:sleeping-marshmallow-boat-holder@127.0.0.1:27017
+        value: mongodb://sorry-cypress:sleeping-marshmallow-boat-holder@mongo-pvge:27017
       # - Name: S3_BUCKET
       #   Value: !Join ['-', [!Ref 'AWS::StackName', 'test-results']]
       # - Name: S3_REGION
@@ -43,7 +43,7 @@ services:
     dockerfilePath: ./Dockerfile.api
     envVars:
       - key: MONGODB_URI
-        value: mongodb://sorry-cypress:sleeping-marshmallow-boat-holder@127.0.0.1:27017
+        value: mongodb://sorry-cypress:sleeping-marshmallow-boat-holder@mongo-pvge:27017
       - key: MONGODB_DATABASE
         value: sorry-cypress
 
