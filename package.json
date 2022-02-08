@@ -4,7 +4,7 @@
   "description": "Running sorry cypress in render",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:para": "CYPRESS_API_URL='https://director.onrender.com' cy2 run --parallel --record --key somekey --ci-build-id hello-cypress"
   },
   "repository": {
     "type": "git",
