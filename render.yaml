@@ -11,13 +11,13 @@ services:
           type: web
           envVarKey: RENDER_EXTERNAL_URL
       - Name: EXECUTION_DRIVER
-        Value: ../execution/mongo/driver
+        value: ../execution/mongo/driver
       - Name: SCREENSHOTS_DRIVER
-        Value: ../screenshots/s3.driver
+        value: ../screenshots/s3.driver
       - Name: MONGODB_DATABASE
-        Value: sorry-cypress
+        value: sorry-cypress
       - Name: MONGODB_URI
-        Value: mongodb://sorry-cypress:sleeping-marshmallow-boat-holder@127.0.0.1:27017
+        value: mongodb://sorry-cypress:sleeping-marshmallow-boat-holder@127.0.0.1:27017
       # - Name: S3_BUCKET
       #   Value: !Join ['-', [!Ref 'AWS::StackName', 'test-results']]
       # - Name: S3_REGION
