@@ -4,8 +4,56 @@ services:
     env: docker
     healthCheckPath: /
     dockerfilePath: ./Dockerfile.director
+    envVars:
+      - key: DASHBOARD_URL
+        fromService:
+          name: dashboard
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
+      - Name: EXECUTION_DRIVER
+        Value: ../execution/mongo/driver
+      - Name: SCREENSHOTS_DRIVER
+        Value: ../screenshots/s3.driver
+      - Name: MONGODB_DATABASE
+        Value: sorry-cypress
+      - Name: MONGODB_URI
+        Value: mongodb://sorry-cypress:sleeping-marshmallow-boat-holder@127.0.0.1:27017
+      # - Name: S3_BUCKET
+      #   Value: !Join ['-', [!Ref 'AWS::StackName', 'test-results']]
+      # - Name: S3_REGION
+      #   Value: !Ref 'AWS::Region'
+
   - type: web
     name: dashboard
     env: docker
     healthCheckPath: /
     dockerfilePath: ./Dockerfile.dashboard
+    envVars:
+      - key: GRAPHQL_SCHEMA_URL
+        value: /api
+      - key: PORT
+        value: 8080
+      - key: CI_URL
+        value: ""
+
+  - type: web
+    name: api
+    env: docker
+    healthCheckPath: /
+    dockerfilePath: ./Dockerfile.api
+    envVars:
+      - key: MONGODB_URI
+        value: mongodb://sorry-cypress:sleeping-marshmallow-boat-holder@127.0.0.1:27017
+      - key: MONGODB_DATABASE
+        value: sorry-cypress
+
+  - type: web
+    name: mongo
+    env: docker
+    healthCheckPath: /
+    dockerfilePath: ./Dockerfile.mongo
+    envVars:
+      - key: MONGO_INITDB_ROOT_PASSWORD
+        value: sleeping-marshmallow-boat-holder
+      - key: MONGO_INITDB_ROOT_USERNAME
+        value: sorry-cypress
