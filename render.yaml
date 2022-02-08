@@ -57,3 +57,7 @@ services:
         value: sleeping-marshmallow-boat-holder
       - key: MONGO_INITDB_ROOT_USERNAME
         value: sorry-cypress
+    disk:
+      name: data
+      mountPath: /data/db
+      sizeGB: 1
