@@ -30,7 +30,10 @@ services:
     dockerfilePath: ./Dockerfile.dashboard
     envVars:
       - key: GRAPHQL_SCHEMA_URL
-        value: /api
+        fromService:
+          name: api
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
       - key: PORT
         value: 8080
       - key: CI_URL
