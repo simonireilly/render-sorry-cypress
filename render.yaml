@@ -47,10 +47,9 @@ services:
       - key: MONGODB_DATABASE
         value: sorry-cypress
 
-  - type: web
+  - type: pserv
     name: mongo
     env: docker
-    healthCheckPath: /test
     dockerfilePath: ./Dockerfile.mongo
     envVars:
       - key: MONGO_INITDB_ROOT_PASSWORD
