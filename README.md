@@ -1,5 +1,12 @@
-# Sry Cyp
+# Sorry (render) Cypress
 
-Running sorry cypress in render
+Running sorry cypress on render, for a fraction of the cost of other platforms.
 
-- [Sry Cyp](#sry-cyp)
+- [Sorry (render) Cypress](#sorry-render-cypress)
+  - [Deployment](#deployment)
+
+In this repo, the sorry cypress stack is deployed using render.
+
+## Deployment
+
+Use this repo, or copy the render.yaml.
